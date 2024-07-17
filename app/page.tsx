@@ -6,7 +6,7 @@ import { redirect } from "next/navigation";
 export default async function LoginPage() {
   const session = await auth()
   console.log(session)
-  if(session?.user?.id) redirect('/dashboard')
+  if(session?.user?.email) redirect('/dashboard')
   return (
     <div className="flex min-h-[100dvh] items-center justify-center bg-background px-4 py-12 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-md space-y-6 text-center">

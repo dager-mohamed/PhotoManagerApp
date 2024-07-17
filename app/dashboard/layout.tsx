@@ -20,7 +20,7 @@ export default async function SidebarLayout({
   children: React.ReactNode;
 }>) {
   const session = await auth();
-  if (!session?.user) redirect("/");
+  if (!session?.user?.email) redirect("/");
   return (
     <>
       <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
